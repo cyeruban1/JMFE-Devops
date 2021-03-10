@@ -17,7 +17,7 @@ steps:
     azureResourceManagerConnection: 'Azure Portal Service Principal'
     subscriptionId: '7ce9a717-0926-4b35-a734-f7c772938858'
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'JMFE Devops RG'
+    resourceGroupName: 'TestSub'
     location: 'East US'
     templateLocation: 'URL of the file'
     csmFileLink: 'https://raw.githubusercontent.com/cyeruban1/JMFE-Devops/main/CreateWebApp/azuredeploy.json'
