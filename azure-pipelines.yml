@@ -1,0 +1,26 @@
+
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+# Starter pipeline
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Azure Portal Service Principal'
+    subscriptionId: '7ce9a717-0926-4b35-a734-f7c772938858'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'JMFE Devops RG'
+    location: 'East US'
+    templateLocation: 'URL of the file'
+    csmFileLink: 'https://raw.githubusercontent.com/cyeruban1/JMFE-Devops/main/CreateWebApp/azuredeploy.json'
+    overrideParameters: '-projectName JMFEDevops'
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
